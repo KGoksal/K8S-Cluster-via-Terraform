@@ -28,8 +28,8 @@ Usage
 Clone the Repository:
 
 Copy code
-git clone <repository_url>
-cd <repository_directory>
+git clone [<repository_url>](https://github.com/AbdulkadirGoksal/K8S-Cluster-via-Terraform.git)
+cd K8S-Cluster-via-Terraform
 
 Initialize Terraform:
 
