@@ -26,18 +26,16 @@ auto.tfvars: This file contains variable definitions such as mykey, ami, region,
 Usage
 
 Clone the Repository:
-'''
-bash
+
 Copy code
 git clone <repository_url>
 cd <repository_directory>
-'''
 
 Initialize Terraform:
 
 Initialize Terraform to download necessary providers and modules.
 
-bash
+
 Copy code
 terraform init
 Review and Apply Configuration:
