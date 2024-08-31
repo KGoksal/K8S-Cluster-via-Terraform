@@ -212,13 +212,21 @@ resource "aws_instance" "kube-master" {
 
 # EC2 Instances for Kubernetes worker nodes
 resource "aws_instance" "kube-worker" {
-  count             = 2  # Two worker nodes
-  ami               = var.ami
-  instance_type     = var.instance_type
-  iam_instance_profile = aws_iam_instance_profile.K8S-cluster-master-server-profile.name
-  key_name          = var.mykey
-  subnet_id         = "subnet-079ed9643fe7323db"  # Replace with your subnet ID
-  availability_zone = "us-east-1a"  # Availability zone for the instances
-  security_groups   = [
+  count               = 2  # Two worker nodes
+  ami                 = var.ami
+  instance_type       = var.instance_type
+  key_name            = var.mykey
+  subnet_id           = "subnet-079ed9643fe7323db"  # Replace with your subnet ID
+  availability_zone   = "us-east-1a"
+  security_groups     = [
     aws_security_group.K8S-cluster-kube-worker-sg.id,
-    aws_
+    aws_security_group.K8S-cluster-mutual-sg.id
+  ]
+  tags = {
+    Name        = "kube-worker-${count.index}"
+    Project     = "tera-kube-ans"
+    Role        = "worker"
+    Id          = "${count.index + 1}"
+    Environment = "dev"
+  }
+}
