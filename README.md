@@ -14,3 +14,4 @@ Resource definitions (e.g., aws_instance, aws_security_group, aws_iam_role) rema
 main.tf: Contains the Terraform configuration for provisioning AWS resources. It references variables from var. namespace and defines resource blocks for EC2 instances, security groups, IAM roles, etc.
 
 auto.tfvars: This file contains variable definitions such as mykey, ami, region, instance_type, as well as additional variables specific to security groups and other configurations. It overrides default values and provides customizable inputs for your deployment. 
+ 
