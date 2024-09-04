@@ -1,5 +1,5 @@
 # Provider Block: Configures AWS as the cloud provider and sets the region
-provider "aws" {
+provider "aws" { 
   region = var.region
 }
 
