@@ -71,12 +71,14 @@ resource "aws_security_group" "K8S-cluster-mutual-sg" {
     to_port   = 2380
     self      = true  # Allows communication within the security group
   }
-}
+} 
+
 
 # Security Group for Kubernetes master nodes
 resource "aws_security_group" "K8S-cluster-kube-master-sg" {
   name   = var.sec-gr-k8s-master
   vpc_id = data.aws_vpc.name.id
+
 
   # Ingress rules for Kubernetes master security group
   ingress {
