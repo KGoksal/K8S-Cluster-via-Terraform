@@ -231,4 +231,4 @@ resource "aws_instance" "kube-worker" {
     Id          = "${count.index + 1}"
     Environment = "dev"
   }
-}
+} 
