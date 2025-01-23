@@ -2,11 +2,11 @@
 
 This Terraform configuration sets up a Kubernetes cluster on AWS using EC2 instances. It utilizes Terraform to manage infrastructure as code, ensuring consistency and repeatability in deployments. 
 
-# Variable Declarations
+# Variable Declarations 
 
-Variables such as ami, region, instance_type, mykey, etc., have been consolidated into auto.tfvars. This file now serves as the single source for specifying variable values, ensuring easier management and separation of sensitive data.
+Variables such as ami, region, instance_type, mykey, etc., have been consolidated into auto.tfvars. This file now serves as the single source for specifying variable values, ensuring easier management and separation of sensitive data. 
 
-# Provider Configuration
+# Provider Configuration 
 
 The AWS provider configuration in main.tf now correctly references variables declared within the same file. For example, var.region is used to specify the AWS region where resources will be provisioned.
 
